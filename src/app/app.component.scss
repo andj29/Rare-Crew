@@ -1,0 +1,43 @@
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgb(228, 228, 228);
+    border-collapse: collapse;
+    padding: 15px;
+    color: rgb(34, 34, 34);
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    td {
+        @extend table;
+        padding: 10px;
+        width: max-content;
+        text-align: center;
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+
+    th {
+        @extend table;
+        padding: 10px;
+        background-color: rgb(228, 228, 228);
+        text-align: center;
+
+        &:first-child {
+            text-align: left;
+            justify-content: left;
+        }
+    }
+}
+
+.unfulfilled {
+    background-color: rgb(252, 164, 164);
+}
+
+#chart {
+    max-width: 500px;
+    margin: 35px auto;
+    padding: 0;
+}

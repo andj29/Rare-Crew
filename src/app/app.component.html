@@ -1,0 +1,19 @@
+<div class="container" *ngIf="employees">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Total Time in Month</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let employee of employees | groupBy: 'EmployeeName'"
+            [ngClass]="employee.value >= 100 ? '' : 'unfulfilled'">
+            <td>{{ employee.key }}</td>
+            <td>{{ employee.value}} hrs</td>
+            <td><a href="url">Edit</a></td>
+        </tr>
+    </table>
+    <div id="chart" *ngIf="chartOptions">
+        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [labels]="chartOptions.labels"
+            [responsive]="chartOptions.responsive"></apx-chart>
+    </div>
+</div>
